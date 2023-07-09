@@ -121,10 +121,11 @@ body {
     
     background-color: var(--primary-color);
     color: var(--bg-color-secondary);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: .1rem;
     padding: 1rem 2rem;
+    margin: 0.5rem;
     border-radius: 4rem;
     transition: 0.3s ease;
 }
@@ -158,6 +159,30 @@ body {
     font-size: 1.6rem;
 }
 
+.about-content {
+    flex: 1;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+.skill-box {
+    flex: 1 1 30rem;
+    background-color: var(--bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    align-items: center;
+
+}
+
+
 #projects {
     padding: 10rem 10% 2rem;
     display: flex;
@@ -166,20 +191,45 @@ body {
 
 #projects h2 {
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .projects-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem;
-    gap: 5rem;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
 }
+
 .project-box {
+    flex: 1 1 100rem;
     display: flex;
+    background-color: var(--bg-color-secondary);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
     flex-direction: column;
     align-items: center;
 
+}
+
+.project-box .tech {
+    display: flex;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.project-box p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-box h1 {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
 }
 
 #project-img {
