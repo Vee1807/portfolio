@@ -12,10 +12,10 @@
 
 :root {
     font-size: 63%;
-    --bg-color: #1f1f1f;
-    --bg-color-secondary: #323946;
+    --bg-color: rgb(18,18,18);
+    --bg-color-secondary: rgb(29,29,29);
     --text-color: #ffffff;
-    --primary-color: #5dfaff;
+    --primary-color: rgb(187,134,252);
 }
 
 body {
@@ -71,7 +71,7 @@ body {
 }
 
 .home-content {
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .home-content h3 {
@@ -154,6 +154,7 @@ body {
 
 .about-content p {
     font-size: 2rem;
+    font-weight: 500;
 }
 
 .about-content {
@@ -187,7 +188,9 @@ body {
 .skill-box h2 {
     font-weight: 200;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    margin-left: 3rem;
+    
 }
 
 .skill-box .cert {
@@ -197,9 +200,11 @@ body {
 
 .skill-box a {
     font-size: 1.2rem;
+    letter-spacing: 0.1rem;
     color: var(--primary-color);
     padding: 0.7rem;
     margin-bottom: 3rem;
+    margin-left: 3rem;
     border-radius: 2rem;
     border-color: var(--primary-color);
     border-style: solid;
@@ -236,7 +241,7 @@ body {
     flex: 1 1 100rem;
     display: flex;
     background-color: var(--bg-color-secondary);
-    padding: 3rem 2rem 4rem;
+    padding: 4rem;
     border-radius: 2rem;
     text-align: center;
     flex-direction: column;
