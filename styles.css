@@ -325,8 +325,9 @@ body {
         left: 0;
         width: 100%;
         padding: 1rem 3%;
-        background-color: var(--bg-color-secondary);
+        background-color: var(--bg-color);
         display: none;
+        box-shadow: 0 0.7rem 0.7rem rgba(7, 7, 7, 0.5);
     }
 
     .navbar.active {
