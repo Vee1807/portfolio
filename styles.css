@@ -256,12 +256,15 @@ body {
 }
 
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
     gap: 2rem;
 }
 
 .project-box {
+    width: 38vw;
     display: flex;
     background-color: var(--bg-color-secondary);
     padding: 4rem;
@@ -270,7 +273,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .project-box .tech {
@@ -361,6 +363,10 @@ body {
     html {
         font-size: 55%;
     }
+
+    .project-box {
+        width: 100%;
+    }
 }
 
 
@@ -396,12 +402,13 @@ body {
 
     
     #projects {
-        padding: 5px;
+        padding: 10rem 2rem;
     }
 
-    .project-box {
-        border-radius: 0;
+    #about {
+        padding: 10rem 2rem;
     }
+
 }
 
 @media (max-width: 300px) {
