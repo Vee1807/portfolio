@@ -6,8 +6,8 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: sans-serif;
-    
+    font-family: 'Lato', sans-serif;
+
 }
 
 html {
@@ -16,10 +16,11 @@ html {
 }
 
 :root {
-    --bg-color: rgb(18,18,18);
-    --bg-color-secondary: rgb(29,29,29);
-    --text-color: #ffffff;
-    --primary-color: rgb(187,134,252);
+    --bg-color: rgb(18, 18, 18);
+    --bg-color-secondary: rgb(29, 29, 29);
+    --text-color: #fff;
+    --text-color-secondary: #c3c3c3;
+    --primary-color: rgb(187, 134, 252);
 }
 
 body {
@@ -54,7 +55,7 @@ body {
 }
 
 .navbar a:hover,
-.navbar a.current{
+.navbar a.current {
     color: var(--primary-color);
     transition: 0.3s;
 }
@@ -166,6 +167,8 @@ body {
 .about-content p {
     font-size: 2rem;
     font-weight: 500;
+    text-align: center;
+    color: var(--text-color-secondary);
 }
 
 .about-content {
@@ -179,7 +182,7 @@ body {
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
-    
+
 }
 
 .skill-box {
@@ -197,24 +200,37 @@ body {
 }
 
 .skill-box h2 {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 2rem;
     margin: 1rem;
     margin-left: 3rem;
-    
+
+}
+
+.certs-wrapper {
+    height: 100%;
+}
+
+.certs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .skill-box .cert {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+    flex-grow: 1;
 }
+
 
 .skill-box a {
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     color: var(--primary-color);
-    padding: 0.7rem;
-    margin-bottom: 3rem;
+    padding: 0.7rem 1rem;
     margin-left: 3rem;
     border-radius: 2rem;
     border-color: var(--primary-color);
@@ -240,16 +256,12 @@ body {
 }
 
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
     gap: 2rem;
-    
 }
 
 .project-box {
-    flex: 1 1 100rem;
     display: flex;
     background-color: var(--bg-color-secondary);
     padding: 4rem;
@@ -257,6 +269,7 @@ body {
     text-align: center;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -269,6 +282,7 @@ body {
 .project-box p {
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: var(--text-color-secondary);
 }
 
 .project-box h1 {
@@ -289,9 +303,16 @@ body {
     margin: 1rem;
 }
 
+.project-box-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 .project-info {
     display: flex;
     gap: 5rem;
+    justify-content: center;
 }
 
 .project-info i {
@@ -304,7 +325,7 @@ body {
     color: var(--bg-color-secondary);
     font-size: 1.7rem;
     font-weight: bold;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 0.4rem var(--primary-color);
     border-radius: 1.2rem;
@@ -312,7 +333,7 @@ body {
     text-align: left;
 }
 
-#note > .bx {
+#note>.bx {
     font-size: 1.9rem;
     display: flex;
     margin-right: 15px;
@@ -355,12 +376,17 @@ body {
         width: 100%;
         padding: 1rem 3%;
         background-color: var(--bg-color);
-        display: none;
+        /*display: none;*/
         box-shadow: 0 0.7rem 0.7rem rgba(7, 7, 7, 0.5);
+        transition: height 0.2s ease-out;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
     }
 
     .navbar.active {
-        display: block;
+        height: 22rem;
+        visibility: visible;
     }
 
     .navbar a {
@@ -368,5 +394,18 @@ body {
         margin: 2.6rem;
     }
 
+    
+    #projects {
+        padding: 5px;
+    }
 
+    .project-box {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 33%;
+    }
 }

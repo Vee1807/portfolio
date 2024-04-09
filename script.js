@@ -2,6 +2,14 @@ let navbarLinks = document.querySelectorAll('.navbar a')
 let sections = document.querySelectorAll('section')
 
 
+// Navbar menu icon toggle
+let menuIcn = document.querySelector('#menu-icon')
+let navbar = document.querySelector('.navbar')
+menuIcn.addEventListener('click', () => {
+    navbar.classList.toggle('active')
+})
+
+
 window.onscroll = () => {
     navbar.classList.remove('active')
     sections.forEach(section => {
@@ -16,11 +24,3 @@ window.onscroll = () => {
         }
     })
 }
-
-
-// Navbar menu icon toggle
-let menuIcn = document.querySelector('#menu-icon')
-let navbar = document.querySelector('.navbar')
-menuIcn.addEventListener('click', () => {
-    navbar.classList.toggle('active')
-})
