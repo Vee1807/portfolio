@@ -20,7 +20,8 @@ html {
     --bg-color-secondary: rgb(29, 29, 29);
     --text-color: #fff;
     --text-color-secondary: #c3c3c3;
-    --primary-color: rgb(187, 134, 252);
+    --primary-color: rgb(179, 133, 224);
+    --primary-color-dark: rgb(160, 93, 242);
 }
 
 body {
@@ -328,17 +329,27 @@ body {
     font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 0.4rem var(--primary-color);
+    background-color: rgba(214, 214, 214, 0.1);
+    border: 0.1rem solid var(--primary-color-dark);
     border-radius: 1.2rem;
     padding: 1rem 2rem;
-    text-align: left;
+    color: var(--bg-color);
+    justify-content: center
 }
 
-#note>.bx {
-    font-size: 1.9rem;
+#note > p {
+    color: var(--text-color-secondary);
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+#note > .bx {
+    font-size: 2.5rem;
     display: flex;
-    margin-right: 15px;
+    margin-right: 1rem;
+    color: var(--primary-color-dark);
+    margin-top: 0.1rem;
 }
 
 
