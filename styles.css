@@ -395,7 +395,7 @@ body {
         background-color: var(--bg-color);
         /*display: none;*/
         box-shadow: 0 0.7rem 0.7rem rgba(7, 7, 7, 0.5);
-        transition: height 0.2s ease-out;
+        transition: height 0.25s ease-out;
         height: 0;
         overflow: hidden;
         visibility: hidden;
@@ -411,6 +411,9 @@ body {
         margin: 2.6rem;
     }
 
+    .navbar a.current {
+        transition: 0s;
+    }
     
     #projects {
         padding: 10rem 2rem;
