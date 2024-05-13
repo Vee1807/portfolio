@@ -16,12 +16,12 @@ html {
 }
 
 :root {
-    --bg-color: rgb(18, 18, 18);
-    --bg-color-secondary: rgb(29, 29, 29);
+    --bg-color: #0f0f11;
+    --bg-color-secondary: #161619;
     --text-color: #fff;
     --text-color-secondary: #c3c3c3;
-    --primary-color: rgb(179, 133, 224);
-    --primary-color-dark: rgb(160, 93, 242);
+    --primary-color: #ae72d3;
+    --primary-color-dark: #9651fd;
 }
 
 body {
