@@ -411,7 +411,7 @@ body {
     }
 
     .navbar.active {
-        height: 22rem;
+        height: 20rem;
         visibility: visible;
     }
 
