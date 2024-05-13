@@ -388,6 +388,13 @@ body {
         display: block;
     }
 
+    .header-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 99999;
+    }
+
     .navbar {
         position: absolute;
         top: 100%;
@@ -397,7 +404,7 @@ body {
         background-color: var(--bg-color);
         /*display: none;*/
         box-shadow: 0 0.7rem 0.7rem rgba(7, 7, 7, 0.5);
-        transition: height 0.25s ease-out;
+        transition: all 0.25s ease-in-out;
         height: 0;
         overflow: hidden;
         visibility: hidden;
