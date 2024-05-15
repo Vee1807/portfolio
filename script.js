@@ -1,22 +1,4 @@
-const getTheme = () => {
-    console.log('loaded')
-    let theme = ""
-	if (localStorage.theme === "dark" || !("theme" in localStorage)) {
-		theme = "dark"
-	} else {
-		theme = "light"
-	}
-    document.documentElement.setAttribute('data-theme', theme);
-    themeBtn.firstElementChild.classList = getIcon(theme)
-    return
-}
-
-window.onload = getTheme
-
-const setTheme = (theme) => {
-    themeBtn.firstElementChild.classList = getIcon(theme)
-    localStorage.setItem("theme", theme)
-}
+const themeBtn = document.getElementById('theme-btn')
 
 const getIcon = (theme) => {
 	if (theme === "dark") {
@@ -26,6 +8,13 @@ const getIcon = (theme) => {
 	}
 }
 
+const setTheme = (theme) => {
+    themeBtn.firstElementChild.classList = getIcon(theme)
+    localStorage.setItem("theme", theme)
+}
+
+window.onload = setTheme(document.documentElement.getAttribute('data-theme'))
+
 const themeToggle = () => {
     let theme = document.documentElement.getAttribute('data-theme')
     if (theme === "dark") {
@@ -33,12 +22,13 @@ const themeToggle = () => {
 	} else {
 		theme = "dark"
 	}
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme)
     setTheme(theme)
 }
 
-const themeBtn = document.getElementById('theme-btn')
 themeBtn.addEventListener('click', themeToggle)
+
+
 
 const navbarLinks = document.querySelectorAll('.navbar a')
 const sections = document.querySelectorAll('section')
