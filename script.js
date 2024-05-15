@@ -1,10 +1,52 @@
-let navbarLinks = document.querySelectorAll('.navbar a')
-let sections = document.querySelectorAll('section')
+const getTheme = () => {
+    console.log('loaded')
+    let theme = ""
+	if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+		theme = "dark"
+	} else {
+		theme = "light"
+	}
+    document.documentElement.setAttribute('data-theme', theme);
+    themeBtn.firstElementChild.classList = getIcon(theme)
+    return
+}
+
+window.onload = getTheme
+
+const setTheme = (theme) => {
+    themeBtn.firstElementChild.classList = getIcon(theme)
+    localStorage.setItem("theme", theme)
+}
+
+const getIcon = (theme) => {
+	if (theme === "dark") {
+		return "bx bx-moon"
+	} else {
+		return "bx bx-sun"
+	}
+}
+
+const themeToggle = () => {
+    let theme = document.documentElement.getAttribute('data-theme')
+    if (theme === "dark") {
+		theme = "light"
+	} else {
+		theme = "dark"
+	}
+    document.documentElement.setAttribute('data-theme', theme);
+    setTheme(theme)
+}
+
+const themeBtn = document.getElementById('theme-btn')
+themeBtn.addEventListener('click', themeToggle)
+
+const navbarLinks = document.querySelectorAll('.navbar a')
+const sections = document.querySelectorAll('section')
 
 
 // Navbar menu icon toggle
-let menuIcn = document.querySelector('#menu-icon')
-let navbar = document.querySelector('.navbar')
+const menuIcn = document.querySelector('#menu-icon')
+const navbar = document.querySelector('.navbar')
 menuIcn.addEventListener('click', () => {
     navbar.classList.toggle('active')
 })
@@ -13,13 +55,13 @@ menuIcn.addEventListener('click', () => {
 window.onscroll = () => {
     navbar.classList.remove('active')
     sections.forEach(section => {
-        let sectionY = window.scrollY + section.getBoundingClientRect().top
-        let id = section.id
+        const sectionY = window.scrollY + section.getBoundingClientRect().top
+        const id = section.id
         if (sectionY <= window.scrollY + 50 && sectionY + section.scrollHeight >= window.scrollY) {
             navbarLinks.forEach(link => {
                 link.classList.remove('current')
             })
-            let currentLink = document.querySelector(`.navbar a[href*='${id}']`)
+            const currentLink = document.querySelector(`.navbar a[href*='${id}']`)
             currentLink.classList.add('current')
         }
     })

@@ -16,13 +16,26 @@ html {
 }
 
 :root {
+    --bg-color: #fff;
+    --bg-color-secondary: #f5f5f5;
+    --text-color: #161616;
+    --text-color-secondary: #424242;
+    --primary-color: #a05acb;
+    --primary-color-dark: #8e45fc;
+    --border-color: #ececec;
+    --shadow-color: rgba(7, 7, 7, 0.1);
+}
+
+[data-theme="dark"] {
     --bg-color: #0f0f11;
     --bg-color-secondary: #161619;
     --text-color: #fff;
     --text-color-secondary: #c3c3c3;
     --primary-color: #ae72d3;
     --primary-color-dark: #9651fd;
-}
+    --border-color: #121214;
+    --shadow-color: rgba(7, 7, 7, 0.5);
+    }
 
 body {
     background: var(--bg-color);
@@ -84,6 +97,11 @@ body {
     cursor: default;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -94,6 +112,20 @@ body {
 .navbar a.current {
     color: var(--primary-color);
     transition: 0.3s;
+}
+
+#theme-btn {
+    background-color: transparent;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: all 0.3s ease-out;
+}
+
+#theme-btn > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #menu-icon {
@@ -227,6 +259,7 @@ body {
     padding: 4rem;
     border-radius: 2rem;
     text-align: left;
+    border: solid 1px var(--border-color);
 }
 
 .skill-box h1 {
@@ -307,6 +340,7 @@ body {
     background-color: var(--bg-color-secondary);
     padding: 4rem;
     border-radius: 2rem;
+    border: solid 1px var(--border-color);
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -366,8 +400,8 @@ body {
     font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 0;
-    background-color: rgba(214, 214, 214, 0.1);
-    border: 0.1rem solid var(--primary-color-dark);
+    background-color: var(--bg-color);
+    border: 0.1rem solid var(--primary-color);
     border-radius: 1.2rem;
     padding: 1rem 2rem;
     color: var(--bg-color);
@@ -385,7 +419,7 @@ body {
     font-size: 2.5rem;
     display: flex;
     margin-right: 1rem;
-    color: var(--primary-color-dark);
+    color: var(--primary-color);
     margin-top: 0.1rem;
 }
 
@@ -435,31 +469,37 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 1rem 3%;
+        padding: 1rem 10%;
         background-color: var(--bg-color);
         /*display: none;*/
-        box-shadow: 0 0.7rem 0.7rem rgba(7, 7, 7, 0.5);
+        box-shadow: 0 0.7rem 0.7rem var(--shadow-color);
         transition: all 0.25s ease-in-out;
         height: 0;
         opacity: 0;
         overflow: hidden;
         visibility: hidden;
+        display: block;
     }
 
     .navbar.active {
         opacity: 1;
-        height: 20rem;
+        height: 23rem;
         visibility: visible;
     }
 
     .navbar a {
         display: block;
-        margin: 2.6rem;
+        margin: 0;
+        margin-bottom: 2.6rem;
         margin-top: 0;
     }
 
     .navbar a.current {
         transition: 0s;
+    }
+
+    #theme-btn {
+        margin: 0;
     }
     
     #projects {
