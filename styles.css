@@ -7,7 +7,6 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
-
 }
 
 html {
@@ -210,7 +209,7 @@ body {
     align-items: center;
     background-color: var(--primary-color);
     color: var(--bg-color-secondary);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: .1rem;
     padding: 1rem 2rem;
@@ -253,7 +252,7 @@ body {
 .about-content p {
     font-size: 2rem;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
     color: var(--text-color-secondary);
 }
 
@@ -340,7 +339,6 @@ body {
 }
 
 #projects h2 {
-    text-align: center;
     margin-bottom: 5rem;
 }
 
@@ -356,29 +354,44 @@ body {
     width: 38vw;
     display: flex;
     background-color: var(--bg-color-secondary);
-    padding: 4rem;
     border-radius: 2rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
     border: solid 1px var(--border-color);
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+.project-box-inner {
+    padding: 3rem 4rem 4rem 4rem;
+}
+
+
+.project-box img {
+    width: 100%;
 }
 
 .project-box .tech {
     display: flex;
-    font-size: 3rem;
-    margin: 1rem;
+    font-size: 2.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-box .tech i{
+    font-size: 2.7rem;
 }
 
 .project-box p {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
     color: var(--text-color-secondary);
 }
 
-.project-box h1 {
-    font-size: 2rem;
+.project-box h5 {
+    font-size: 1.8rem;
     margin-right: 1rem;
     color: var(--primary-color);
 }
@@ -390,15 +403,14 @@ body {
 }
 
 .project-box h4 {
-    font-size: 3rem;
-    text-align: center;
-    margin: 1rem;
+    font-size: 2.8rem;
+    margin: 1rem 0;
 }
 
 .project-box-bottom {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: left
 }
 
 .project-info {

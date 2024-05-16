@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
-            let theme = ""
-            let icon = ""
-            if (localStorage.theme === "dark" || !("theme" in localStorage)) {
-                theme = "dark"
-                icon = "bx bx-moon"
-            } else {
-                theme = "light"
-                icon = "bx bx-sun"
-            }
-            document.documentElement.setAttribute('data-theme', theme)
+        let theme = ""
+        let icon = ""
+        if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+            theme = "dark"
+            icon = "bx bx-moon"
+        } else {
+            theme = "light"
+            icon = "bx bx-sun"
+        }
+        document.documentElement.setAttribute('data-theme', theme)
     </script>
     <script src="script.js" defer></script>
 </head>
@@ -118,195 +118,223 @@
         <h2 class="heading">My <span id="secondary-text">Projects</span></h2>
         <div class="projects-container">
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Weather App</h4>
-                    <p>A React-based weather app for checking current conditions and 3-day forecasts in any location.
-                        Features include light/dark mode toggling and automatic weather display based on the user's
-                        location.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='React' class='bx bxl-react'></i>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='Tailwind CSS' class='bx bxl-tailwind-css'></i>
+                <img src="img/project-thumbnails/weather-app.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Weather App</h4>
+                        <p>A React-based weather app for checking current conditions and 3-day forecasts in any
+                            location.
+                            Features include light/dark mode toggling and automatic weather display based on the user's
+                            location.</p>
                     </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='React' class='bx bxl-react'></i>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='Tailwind CSS' class='bx bxl-tailwind-css'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/weather-app-react/" class="btn" target="_blank">Live
-                            Preview <i class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/weather-app-react" class="btn" target="_blank">Source
-                            Code <i class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/weather-app-react/" class="btn"
+                                target="_blank">Live
+                                Preview <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/weather-app-react" class="btn"
+                                target="_blank">Source
+                                Code <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Memories</h4>
-                    <p>A React-based web application that allows users to create and manage their photo albums.
-                        Users can add new cards with images, titles, descriptions, and dates, mark favorites, edit,
-                        and delete cards.
-                    </p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='React' class='bx bxl-react'></i>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
-                    </div>
-
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/memories/" class="btn" target="_blank">Live Preview <i
-                                class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/memories" class="btn" target="_blank">Source Code <i
-                                class='bx bx-code-alt'></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-box hidden-elem">
-                <div>
-                    <h4>Real-Time Chat App</h4>
-                    <p>A real-time chat application, built using Node.js,
-                        Express.js and Socket.IO!
-                    <div id="note">
-                        <i class='bx bxs-info-circle'></i>
-                        <p>This project is hosted on
-                            <i>Render</i>
-                            and may take a few minutes to load.
+                <img src="img/project-thumbnails/memories.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Memories</h4>
+                        <p>A React-based web application that allows users to create and manage their photo albums.
+                            Users can add new cards with images, titles, descriptions, and dates, mark favorites, edit,
+                            and delete cards.
                         </p>
                     </div>
-                    </p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='NodeJS' class='bx bxl-nodejs'></i>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='HTML' class='bx bxl-html5'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
-                    </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='React' class='bx bxl-react'></i>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://real-time-chat-jo33.onrender.com/" class="btn" target="_blank">Live Preview <i
-                                class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/real-time-chat" class="btn" target="_blank">Source
-                            Code <i class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/memories/" class="btn" target="_blank">Live
+                                Preview <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/memories" class="btn" target="_blank">Source Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>News App</h4>
-                    <p>A news application utilizing the New York Times' <i>Top Stories API </i>
-                        and <i>Article Search API</i>, allowing users to explore
-                        various categories and search for articles. Made with vanilla JavaScript, HTML and CSS.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='HTML' class='bx bxl-html5'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
+                <img src="img/project-thumbnails/real-time-chat.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Real-Time Chat App</h4>
+                        <p>A real-time chat application, built using Node.js,
+                            Express.js and Socket.IO!
+                        <div id="note">
+                            <i class='bx bxs-info-circle'></i>
+                            <p>This project is hosted on
+                                <i>Render</i>
+                                and may take a few minutes to load.
+                            </p>
+                        </div>
+                        </p>
                     </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='NodeJS' class='bx bxl-nodejs'></i>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='HTML' class='bx bxl-html5'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/news-app/" class="btn" target="_blank">Live Preview <i
-                                class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/news-app" class="btn" target="_blank">Source Code <i
-                                class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://real-time-chat-jo33.onrender.com/" class="btn" target="_blank">Live Preview
+                                <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/real-time-chat" class="btn"
+                                target="_blank">Source
+                                Code <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Sticky-Notes Board</h4>
-                    <p>A web application that functions as a board for sticky notes.
-                        The notes are stored in the browser's local storage and retrieved upon page reload.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='HTML' class='bx bxl-html5'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
+                <img src="img/project-thumbnails/news.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>News App</h4>
+                        <p>A news application utilizing the New York Times' <i>Top Stories API </i>
+                            and <i>Article Search API</i>, allowing users to explore
+                            various categories and search for articles. Made with vanilla JavaScript, HTML and CSS.</p>
                     </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='HTML' class='bx bxl-html5'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/sticky-notes/" class="btn" target="_blank">Live
-                            Preview <i class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/sticky-notes" class="btn" target="_blank">Source Code
-                            <i class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/news-app/" class="btn" target="_blank">Live
+                                Preview <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/news-app" class="btn" target="_blank">Source Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Word-Counter</h4>
-                    <p>A web application that offers real-time character, word, and sentence counts, along with an
-                        estimated
-                        typing speed (WPM), for any user-input text.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='HTML' class='bx bxl-html5'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
+                <img src="img/project-thumbnails/sticky-notes.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Sticky-Notes Board</h4>
+                        <p>A web application that functions as a board for sticky notes.
+                            The notes are stored in the browser's local storage and retrieved upon page reload.</p>
                     </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='HTML' class='bx bxl-html5'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/word-counter/" class="btn" target="_blank">
-                            Live Preview
-                            <i class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/word-counter" class="btn" target="_blank">
-                            Source Code
-                            <i class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/sticky-notes/" class="btn" target="_blank">Live
+                                Preview <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/sticky-notes" class="btn" target="_blank">Source
+                                Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Tic-Tac-Toe</h4>
-                    <p>The Classic game of Tic-Tac-Toe, made with vanilla JavaScript, HTML and CSS.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='JavaScript' class='bx bxl-javascript'></i>
-                        <i title='HTML' class='bx bxl-html5'></i>
-                        <i title='CSS' class='bx bxl-css3'></i>
+                <img src="img/project-thumbnails/word-counter.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Word-Counter</h4>
+                        <p>A web application that offers real-time character, word, and sentence counts, along with an
+                            estimated
+                            typing speed (WPM), for any user-input text.</p>
                     </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='HTML' class='bx bxl-html5'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
 
-                    <div class="project-info">
-                        <a href="https://vanykardjikian.github.io/tic-tac-toe/" class="btn" target="_blank">
-                            Live Preview
-                            <i class='bx bx-desktop'></i></a>
-                        <a href="https://github.com/vanykardjikian/tic-tac-toe" class="btn" target="_blank">
-                            Source Code
-                            <i class='bx bx-code-alt'></i></a>
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/word-counter/" class="btn" target="_blank">
+                                Live Preview
+                                <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/word-counter" class="btn" target="_blank">
+                                Source Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project-box hidden-elem">
-                <div>
-                    <h4>Calculator50</h4>
-                    <p>A calculator, specifically a <i>Chain Calculator</i>, developed entirely in Java.
-                        It operates similarly to the Windows calculator app in <i>Standard</i> mode.</p>
-                </div>
-                <div class="project-box-bottom">
-                    <div class="tech">
-                        <h1>Technologies used: </h1>
-                        <i title='Java' class='bx bxl-java'></i>
+                <img src="img/project-thumbnails/tic-tac-toe.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Tic-Tac-Toe</h4>
+                        <p>The Classic game of Tic-Tac-Toe, made with vanilla JavaScript, HTML and CSS.</p>
                     </div>
-                    <div class="project-info">
-                        <a href="https://github.com/vanykardjikian/Calculator50" class="btn" target="_blank">
-                            Source Code
-                            <i class='bx bx-code-alt'></i></a>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='JavaScript' class='bx bxl-javascript'></i>
+                            <i title='HTML' class='bx bxl-html5'></i>
+                            <i title='CSS' class='bx bxl-css3'></i>
+                        </div>
+
+                        <div class="project-info">
+                            <a href="https://vanykardjikian.github.io/tic-tac-toe/" class="btn" target="_blank">
+                                Live Preview
+                                <i class='bx bx-desktop'></i></a>
+                            <a href="https://github.com/vanykardjikian/tic-tac-toe" class="btn" target="_blank">
+                                Source Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="project-box hidden-elem">
+                <img src="img/project-thumbnails/calculator50.PNG">
+                <div class="project-box-inner">
+                    <div>
+                        <h4>Calculator50</h4>
+                        <p>A calculator, specifically a <i>Chain Calculator</i>, developed entirely in Java.
+                            It operates similarly to the Windows calculator app in <i>Standard</i> mode.</p>
+                    </div>
+                    <div class="project-box-bottom">
+                        <div class="tech">
+                            <h5>Technologies used: </h5>
+                            <i title='Java' class='bx bxl-java'></i>
+                        </div>
+                        <div class="project-info">
+                            <a href="https://github.com/vanykardjikian/Calculator50" class="btn" target="_blank">
+                                Source Code
+                                <i class='bx bx-code-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <!-- Contact Section-->
