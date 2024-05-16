@@ -59,6 +59,11 @@ window.onscroll = () => {
 
 
 // Scroll animations
+const observerOptions = {
+	root: null,
+	threshold: 0.15,
+}
+
 const observer = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting) {
@@ -67,7 +72,7 @@ const observer = new IntersectionObserver(entries => {
 			entry.target.classList.remove('show-animation')
 		}
 	})
-})
+}, observerOptions)
 
 const hiddenElements = document.querySelectorAll('.hidden-elem')
 hiddenElements.forEach(elem => observer.observe(elem))
