@@ -566,10 +566,12 @@ textarea::-webkit-scrollbar-thumb:hover {
     }
 
     #contact form {
+        padding: 0 10px;
         width: 100%;
     }
 
     #contact-email {
+        padding: 0 10px;
         width: 100%;
     }
 
