@@ -162,12 +162,10 @@ body {
     color: var(--text-color);
     font-size: 3.4rem;
     font-weight: 700;
-    background: radial-gradient(
-        circle at 0% 0%,
-        var(--primary-color) 0%,
-        var(--accent-color) 50%,
-        var(--primary-color) 100%
-      );
+    background: radial-gradient(circle at 0% 0%,
+            var(--primary-color) 0%,
+            var(--accent-color) 50%,
+            var(--primary-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background-position 0.3s ease;
@@ -380,7 +378,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.project-box .tech i{
+.project-box .tech i {
     font-size: 2.7rem;
 }
 
@@ -469,7 +467,90 @@ body {
     font-size: 3rem;
 }
 
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 38vw;
+    font-size: 2rem;
+}
 
+#contact form>input,
+#contact form>textarea {
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color-secondary);
+    margin: 10px 0;
+}
+
+#contact form>textarea {
+    resize: none;
+}
+
+
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+textarea::-webkit-scrollbar-track {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: var(--bg-color);
+    border-radius: 5px;
+    border: 2px solid var(--bg-color);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: var(--text-color-secondary);
+    border-radius: 5px;
+    border: 2px solid var(--bg-color);
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+}
+
+#contact form>button {
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+
+.contact-content-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 50px;
+}
+
+.contact-email-container {
+    border-left: solid 1px var(--primary-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-email {
+    width: 38vw;
+}
+
+#contact-or {
+    color: var(--primary-color);
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 900;
+    padding: 0;
+}
 
 @media (max-width: 1200px) {
     html {
@@ -478,6 +559,23 @@ body {
 
     .project-box {
         width: 100%;
+    }
+
+    .contact-content-inner {
+        flex-direction: column;
+    }
+
+    #contact form {
+        width: 100%;
+    }
+
+    #contact-email {
+        width: 100%;
+    }
+
+    .contact-email-container {
+        border-top: solid 1px var(--primary-color);
+        border-left: none
     }
 }
 

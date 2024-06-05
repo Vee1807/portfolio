@@ -7,14 +7,15 @@ const getIcon = (theme) => {
 		return "bx bx-sun"
 	}
 }
-
+const captcha = document.querySelector(".h-captcha")
 const setTheme = (theme) => {
+	document.documentElement.setAttribute('data-theme', theme)
+	captcha.setAttribute('data-theme', theme)
 	themeBtn.firstElementChild.classList = getIcon(theme)
 	localStorage.setItem("theme", theme)
 }
 
 window.onload = setTheme(document.documentElement.getAttribute('data-theme'))
-
 const themeToggle = () => {
 	let theme = document.documentElement.getAttribute('data-theme')
 	if (theme === "dark") {
@@ -22,7 +23,6 @@ const themeToggle = () => {
 	} else {
 		theme = "dark"
 	}
-	document.documentElement.setAttribute('data-theme', theme)
 	setTheme(theme)
 }
 
