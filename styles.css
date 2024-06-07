@@ -488,7 +488,15 @@ body {
 
 #contact form>textarea {
     resize: none;
+    height: 7rem;
+    transition: all 0.5s ease;
 }
+
+#contact form>textarea:focus {
+    height: 200px;
+    max-height: fit-content;
+}
+
 
 textarea::-webkit-scrollbar {
     width: 8px;
@@ -523,6 +531,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .contact-content-inner {
     width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: stretch;
