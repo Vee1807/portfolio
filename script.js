@@ -2,40 +2,49 @@
 const form = document.getElementById('form');
 const result = document.getElementById('result');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "<i class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>"
+form.addEventListener('submit', function (e) {
+	e.preventDefault();
 
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = json.message;
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 5000);
-        });
+	const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if (!hCaptcha) {
+        e.preventDefault();
+        result.innerText = "Please fill out captcha field"
+        return
+    }
+
+	const formData = new FormData(form);
+	const object = Object.fromEntries(formData);
+	const json = JSON.stringify(object);
+	result.innerHTML = "<i class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>"
+
+	fetch('https://api.web3forms.com/submit', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json'
+		},
+		body: json
+	})
+		.then(async (response) => {
+			let json = await response.json();
+			if (response.status == 200) {
+				result.innerHTML = json.message;
+			} else {
+				console.log(response);
+				result.innerHTML = json.message;
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			result.innerHTML = "Something went wrong!";
+		})
+		.then(function () {
+			form.reset();
+			setTimeout(() => {
+				result.style.display = "none";
+			}, 5000);
+		});
 });
 
 // Theme toggle
@@ -49,10 +58,29 @@ const getIcon = (theme) => {
 	}
 }
 
-const captcha = document.querySelector('.h-captcha')
+
+document.addEventListener("DOMContentLoaded", function () {
+	const captchadiv = document.querySelector('[data-captcha="true"]')
+	if (!captchadiv) return
+	captchadiv.dataset.sitekey = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+
+	let scriptSrc = "https://js.hcaptcha.com/1/api.js?recaptchacompat=off";
+
+	const theme = document.documentElement.getAttribute('data-theme')
+	captchadiv.setAttribute('data-theme', theme)
+
+	const script = document.createElement("script")
+	script.type = "text/javascript"
+	script.async = true
+	script.defer = true
+	script.src = scriptSrc
+	document.body.appendChild(script)
+})
+
+//const captcha = document.querySelector('.h-captcha')
 const setTheme = (theme) => {
 	document.documentElement.setAttribute('data-theme', theme)
-	captcha.setAttribute('data-theme', theme)
+	//captcha.setAttribute('data-theme', theme)
 	themeBtn.firstElementChild.classList = getIcon(theme)
 	localStorage.setItem("theme", theme)
 }
@@ -65,6 +93,7 @@ const themeToggle = () => {
 	} else {
 		theme = "dark"
 	}
+	//reloadCaptcha(theme)
 	setTheme(theme)
 }
 
