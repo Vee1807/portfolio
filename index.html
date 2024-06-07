@@ -342,8 +342,11 @@
         <div class="contact-content hidden-elem">
             <h2 class="heading">Contact <span id="secondary-text">Me</span></h2>
             <div class="contact-content-inner">
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form method="POST" id="form">
                     <input type="hidden" name="access_key" value="1a51c13e-7e79-4735-9ea6-0e9d11fbb05a">
+                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                     <label for="name">Name: </label>
                     <input type="text" name="name" required>
                     <label for="email">Email: </label>
@@ -351,7 +354,12 @@
                     <label for="message">Message: </label>
                     <textarea name="message" required></textarea>
                     <div class="h-captcha" data-captcha="true"></div>
-                    <button type="submit" class="btn">Send</button>
+                    <div class="form-bottom">
+                        <button type="submit" class="btn">Send</button>
+                        <div id="result"></div>
+                    </div>
+
+
                 </form>
                 <!-- Required for hCaptcha -->
                 <script src="https://web3forms.com/client/script.js" async defer></script>

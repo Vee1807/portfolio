@@ -1,3 +1,44 @@
+// Message form submission
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+  result.innerHTML = "<i class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>"
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = json.message;
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 5000);
+        });
+});
+
+// Theme toggle
 const themeBtn = document.getElementById('theme-btn')
 
 const getIcon = (theme) => {
@@ -7,7 +48,8 @@ const getIcon = (theme) => {
 		return "bx bx-sun"
 	}
 }
-const captcha = document.querySelector(".h-captcha")
+
+const captcha = document.querySelector('.h-captcha')
 const setTheme = (theme) => {
 	document.documentElement.setAttribute('data-theme', theme)
 	captcha.setAttribute('data-theme', theme)
@@ -29,12 +71,10 @@ const themeToggle = () => {
 themeBtn.addEventListener('click', themeToggle)
 
 
-
+// Navbar menu icon toggle
 const navbarLinks = document.querySelectorAll('.navbar a')
 const sections = document.querySelectorAll('section')
 
-
-// Navbar menu icon toggle
 const menuIcn = document.querySelector('#menu-icon')
 const navbar = document.querySelector('.navbar')
 menuIcn.addEventListener('click', () => {
