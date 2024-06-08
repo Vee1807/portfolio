@@ -2,20 +2,20 @@
 const form = document.getElementById('form');
 const result = document.getElementById('result');
 
-form.addEventListener('submit', function (e) {
-	e.preventDefault();
+form.addEventListener('submit', (e) => {
+	e.preventDefault()
 
-	const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+	const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value
 
     if (!hCaptcha) {
-        e.preventDefault();
+        e.preventDefault()
         result.innerText = "Please fill out captcha field"
         return
     }
 
-	const formData = new FormData(form);
-	const object = Object.fromEntries(formData);
-	const json = JSON.stringify(object);
+	const formData = new FormData(form)
+	const object = Object.fromEntries(formData)
+	const json = JSON.stringify(object)
 	result.innerHTML = "<i class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>"
 
 	fetch('https://api.web3forms.com/submit', {
@@ -27,25 +27,25 @@ form.addEventListener('submit', function (e) {
 		body: json
 	})
 		.then(async (response) => {
-			let json = await response.json();
+			let json = await response.json()
 			if (response.status == 200) {
-				result.innerHTML = json.message;
+				result.innerHTML = json.message
 			} else {
-				console.log(response);
-				result.innerHTML = json.message;
+				console.log(response)
+				result.innerHTML = json.message
 			}
 		})
 		.catch(error => {
-			console.log(error);
-			result.innerHTML = "Something went wrong!";
+			console.log(error)
+			result.innerHTML = "Something went wrong!"
 		})
 		.then(function () {
-			form.reset();
+			form.reset()
 			setTimeout(() => {
-				result.style.display = "none";
-			}, 5000);
-		});
-});
+				result.style.display = "none"
+			}, 5000)
+		})
+})
 
 // Theme toggle
 const themeBtn = document.getElementById('theme-btn')
@@ -59,12 +59,10 @@ const getIcon = (theme) => {
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 	const captchadiv = document.querySelector('[data-captcha="true"]')
 	if (!captchadiv) return
 	captchadiv.dataset.sitekey = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-
-	let scriptSrc = "https://js.hcaptcha.com/1/api.js?recaptchacompat=off";
 
 	const theme = document.documentElement.getAttribute('data-theme')
 	captchadiv.setAttribute('data-theme', theme)
@@ -73,14 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	script.type = "text/javascript"
 	script.async = true
 	script.defer = true
-	script.src = scriptSrc
+	script.src = "https://js.hcaptcha.com/1/api.js?recaptchacompat=off"
 	document.body.appendChild(script)
 })
 
-//const captcha = document.querySelector('.h-captcha')
+
 const setTheme = (theme) => {
+	const captcha = document.querySelector('.h-captcha')
 	document.documentElement.setAttribute('data-theme', theme)
-	//captcha.setAttribute('data-theme', theme)
+	captcha.dataset.theme = theme
 	themeBtn.firstElementChild.classList = getIcon(theme)
 	localStorage.setItem("theme", theme)
 }
@@ -93,7 +92,6 @@ const themeToggle = () => {
 	} else {
 		theme = "dark"
 	}
-	//reloadCaptcha(theme)
 	setTheme(theme)
 }
 
