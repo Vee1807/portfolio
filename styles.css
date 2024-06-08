@@ -550,6 +550,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 #contact-email {
     width: 38vw;
+    word-wrap: break-word;
 }
 
 #contact-or {
