@@ -21,9 +21,11 @@ html {
     --text-color-secondary: #424242;
     --primary-color: #a05acb;
     --primary-color-dark: #8e45fc;
+    --primary-color-light: #c481ed;
     --accent-color: #4682b4;
     --border-color: #ececec;
     --shadow-color: rgba(7, 7, 7, 0.1);
+    --border-color-secondary: rgb(223, 223, 223);
 }
 
 [data-theme="dark"] {
@@ -33,9 +35,11 @@ html {
     --text-color-secondary: #c3c3c3;
     --primary-color: #ae72d3;
     --primary-color-dark: #9651fd;
+    --primary-color-light: #8c4ab1;
     --accent-color: #6cb6ff;
     --border-color: #121214;
     --shadow-color: rgba(7, 7, 7, 0.5);
+    --border-color-secondary: rgb(45, 45, 45);
 }
 
 body {
@@ -205,6 +209,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: var(--primary-color);
     color: var(--bg-color-secondary);
     font-size: 1.2rem;
@@ -269,26 +274,74 @@ body {
 }
 
 .skill-box {
-    flex: 1 1 30rem;
+    width: 38vw;
     background-color: var(--bg-color);
-    padding: 4rem;
+    padding: 55px;
     border-radius: 2rem;
     text-align: left;
     border: solid 1px var(--border-color);
+    flex: 1;
 }
 
-.skill-box h1 {
+.skill-box h3 {
     color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.skill-box h2 {
-    font-weight: 400;
+.skill-box h4 {
+    color: var(--text-color);
     font-size: 2rem;
-    margin: 1rem;
-    margin-left: 3rem;
+    margin-bottom: 10px;
+}
 
+.skill-box p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+
+.skill-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-between;
+    gap: 40px;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color-secondary);
+    margin-left: 25px;
+    position: relative;
+}
+
+.skill-list:before,
+.skill-list:after{
+  position: absolute;
+  left: -7px;
+  bottom: 0;
+  height: 12px;
+  width: 12px;
+  background: var(--primary-color-light);
+  border: 2px solid var(--bg-color);
+  content: "";
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.skill-list:after {
+  top: 0;
+  bottom: auto;
+}
+
+
+.skill-list > p {
+    margin: 0;
 }
 
 .certs-wrapper {
@@ -302,6 +355,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding-left: 20px;
+    gap: 20px;
 }
 
 .skill-box .cert {
@@ -317,7 +372,6 @@ body {
     letter-spacing: 0.1rem;
     color: var(--primary-color);
     padding: 0.7rem 1rem;
-    margin-left: 3rem;
     border-radius: 2rem;
     border-color: var(--primary-color);
     border-style: solid;
@@ -573,9 +627,15 @@ textarea::-webkit-scrollbar-thumb:hover {
     font-size: 2rem;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     html {
         font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .skill-box {
+        width: 100%;
     }
 
     .project-box {
@@ -602,7 +662,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #menu-icon {
         display: block;
     }
@@ -662,7 +722,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 }
 
-@media (max-width: 300px) {
+@media screen and (max-width: 300px) {
     html {
         font-size: 33%;
     }
