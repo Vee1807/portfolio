@@ -6,16 +6,20 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault()
 
 	const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value
-
+	
     if (!hCaptcha) {
-        e.preventDefault()
-        result.innerText = "Please fill out captcha field"
+        result.innerText = "Please complete the captcha."
         return
     }
 
 	const formData = new FormData(form)
 	const object = Object.fromEntries(formData)
 	const json = JSON.stringify(object)
+	if (!(object.name.trim() && object.email.trim() && object.message.trim())) {
+		result.innerText = "Please fill out all required fields."
+		return
+	}
+	
 	result.innerHTML = "<i class='bx bx-loader-circle bx-spin bx-rotate-90' ></i>"
 
 	fetch('https://api.web3forms.com/submit', {
