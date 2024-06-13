@@ -638,6 +638,10 @@ textarea::-webkit-scrollbar-thumb:hover {
         width: 100%;
     }
 
+    .skills-container {
+        flex-direction: column;
+    }
+
     .project-box {
         width: 100%;
     }
