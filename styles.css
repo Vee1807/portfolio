@@ -486,7 +486,7 @@ body {
     color: var(--bg-color-secondary);
     font-size: 1.7rem;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
     background-color: var(--bg-color);
     border: 0.1rem solid var(--primary-color);
     border-radius: 1.2rem;
